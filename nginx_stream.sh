@@ -48,8 +48,10 @@ cp nginx.conf /usr/local/nginx/conf
 #/usr/local/nginx/sbin/nginx -t
 /usr/local/nginx/sbin/nginx
 #/usr/local/nginx/sbin/nginx -s stop
-#streaming
+#streaming mp4 file
  ffmpeg -re -i example-vid.mp4 -vcodec libx264 -vprofile baseline -g 30 -acodec aac -strict -2 -f flv rtmp://localhost/show/stream
+#streaming webcamrea /dev/video0
+#ffmpeg -re -f video4linux2 -i /dev/video0 -vcodec libx264 -vprofile baseline -acodec aac -strict -2 -f flv rtmp://localhost/show/stream
  #test website
  #http://localhost:8080/hls/stream.m3u8
  #rtmp://localhost/show/stream
